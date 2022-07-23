@@ -13,7 +13,7 @@ void read_file_by_line(const char *filename)
 {
     FILE *fp;
     char *line = NULL;
-    long long int *data = NULL, number;
+    long long int data, number;
     size_t len = 0, line_number = 0;
     ssize_t read;
 
@@ -27,16 +27,13 @@ void read_file_by_line(const char *filename)
     while ((read = getline(&line, &len, fp)) != -1) {
         number = atoll(line);
         data = determine_factors(number);
-        if (data)
-            printf("%lld=%lld*%lld\n", number, data[1], data[0]);
+        printf("%lld=%lld*%lld\n", number, number / data, data);
         line_number++;
     }
 
     fclose(fp);
     if (line)
         free(line);
-    if (data)
-        free(data);
 
-    exit(EXIT_SUCCESS);
+    return;
 }
