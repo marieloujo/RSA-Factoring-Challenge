@@ -3,6 +3,6 @@
 
 void read_file_by_line(const char *filename);
 
-long int *determine_factors(long int number);
+long long int *determine_factors(long long int number);
 
 #endif

@@ -9,9 +9,9 @@
  * @filename: file path
  * Return: Nothing
  */
-long int *determine_factors(long int number)
+long long int *determine_factors(long long int number)
 {
-    long int *data = malloc(sizeof(long int) * 2), i = 2;
+    long long int *data = malloc(sizeof(long long int) * 2), i = 2;
 
     while (i <= number)
     {
